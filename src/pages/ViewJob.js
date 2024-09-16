@@ -29,6 +29,10 @@ const ViewJob = () => {
     window.location.href = '/'; // Redirect to home
   };
 
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <div className="container mx-auto p-4">
       {/* Title with Background */}
@@ -94,11 +98,20 @@ const ViewJob = () => {
               >
                 Delete
               </button>
+
+              {/* Print Button */}
+              <button
+                className="bg-green-500 text-white p-2 rounded hover:bg-green-600 transition"
+                onClick={handlePrint}
+              >
+                Print Job Sheet
+              </button>
             </div>
           </div>
         </div>
       )}
-     <div className="flex justify-center mt-4">
+
+      <div className="flex justify-center mt-4">
         <Link to="/" className="bg-gray-500 text-white p-2 rounded inline-block">
           Back to Jobs
         </Link>
