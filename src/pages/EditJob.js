@@ -20,7 +20,7 @@ const EditJob = () => {
 
   useEffect(() => {
     const fetchJob = async () => {
-      const res = await axios.get(`http://localhost:5000/api/jobs/${id}`);
+      const res = await axios.get(`https://job-search-backend-2-j17y.onrender.com/api/jobs/${id}`);
       setFormData(res.data);
     };
     fetchJob();
@@ -28,7 +28,7 @@ const EditJob = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:5000/api/jobs/${id}`, formData);
+    await axios.put(`https://job-search-backend-2-j17y.onrender.com/api/jobs/${id}`, formData);
     navigate('/');
   };
 

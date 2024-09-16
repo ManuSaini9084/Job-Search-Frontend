@@ -21,7 +21,7 @@ const AddJob = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/jobs', formData);
+    await axios.post('https://job-search-backend-2-j17y.onrender.com/api/jobs', formData);
     navigate('/');
   };
 

@@ -21,13 +21,13 @@ const Home = () => {
   }, [searchTerm, jobs]);
 
   const fetchJobs = async () => {
-    const res = await axios.get('http://localhost:5000/api/jobs');
+    const res = await axios.get('https://job-search-backend-2-j17y.onrender.com/api/jobs');
     setJobs(res.data);
     setFilteredJobs(res.data); // Initialize filteredJobs
   };
 
   const deleteJob = async (id) => {
-    await axios.delete(`http://localhost:5000/api/jobs/${id}`);
+    await axios.delete(`https://job-search-backend-2-j17y.onrender.com/api/jobs/${id}`);
     fetchJobs();
   };
 

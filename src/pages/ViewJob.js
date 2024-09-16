@@ -9,7 +9,7 @@ const ViewJob = () => {
 
   useEffect(() => {
     const fetchJob = async () => {
-      const res = await axios.get(`http://localhost:5000/api/jobs/${id}`);
+      const res = await axios.get(`https://job-search-backend-2-j17y.onrender.com/api/jobs/${id}`);
       setJob(res.data);
       setNotes(res.data.clientNotes || ''); // Load existing notes
     };
@@ -17,21 +17,16 @@ const ViewJob = () => {
   }, [id]);
 
   const handleSaveNotes = async () => {
-    await axios.put(`http://localhost:5000/api/jobs/${id}`, { clientNotes: notes });
+    await axios.put(`https://job-search-backend-2-j17y.onrender.com/api/jobs/${id}`, { clientNotes: notes });
     // Optionally, refresh the job details after saving
-    const res = await axios.get(`http://localhost:5000/api/jobs/${id}`);
+    const res = await axios.get(`https://job-search-backend-2-j17y.onrender.com/api/jobs/${id}`);
     setJob(res.data);
   };
 
   const handleDelete = async () => {
-    await axios.delete(`http://localhost:5000/api/jobs/${id}`);
+    await axios.delete(`https://job-search-backend-2-j17y.onrender.com/api/jobs/${id}`);
     // Redirect or update state after deletion
     window.location.href = '/'; // Redirect to home
-  };
-
-  const handleEdit = () => {
-    // Logic to handle edit can be added here
-    alert('Edit done successfully');
   };
 
   return (
